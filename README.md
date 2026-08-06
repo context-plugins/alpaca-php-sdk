@@ -33,7 +33,7 @@ curl.cainfo = PATH_TO/cacert.pem
 
 ## Installation
 
-The following section explains how to use the TraderApiLib library in a new project.
+The following section explains how to use the TraderApi library in a new project.
 
 ### 1. Open Project in an IDE
 
@@ -107,7 +107,7 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| environment | [`Environment`](README.md#environments) | The API environment. <br> **Default: `Environment.PRODUCTION`** |
+| environment | [`Environment`](README.md#environments) | The API environment. <br> **Default: `Environment.PAPER`** |
 | timeout | `int` | Timeout for API calls in seconds.<br>*Default*: `30` |
 | enableRetries | `bool` | Whether to enable retries and backoff feature.<br>*Default*: `false` |
 | numberOfRetries | `int` | The number of retries to make.<br>*Default*: `0` |
@@ -145,7 +145,7 @@ $client = TraderApiClientBuilder::init()
             'APCA-API-SECRET-KEY'
         )
     )
-    ->environment(Environment::PRODUCTION)
+    ->environment(Environment::PAPER)
     ->loggingConfiguration(
         LoggingConfigurationBuilder::init()
             ->level(LogLevel::INFO)
@@ -163,8 +163,8 @@ The SDK can be configured to use a different environment for making API calls. A
 
 | Name | Description |
 |  --- | --- |
-| PRODUCTION | **Default** Paper |
-| ENVIRONMENT2 | Live |
+| PAPER | **Default** Paper trading — simulated money. Safe default. |
+| LIVE | Live trading — REAL money. |
 
 ## Authorization
 
